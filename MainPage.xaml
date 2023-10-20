@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RegistrationPage.MainPage" BackgroundColor="#2D1F30"> 
+    <Grid>
+        <Grid.Background> <!-- how? -->
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="#2D1F30" Offset="0.02" />
+                <GradientStop Color="Black" Offset="2.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" BackgroundColor="Transparent">
+            <Label FontSize="20"
+           HorizontalOptions="CenterAndExpand"
+           Text="LOG IN TO MENTOREE"
+           TextColor="White"
+           VerticalOptions="End"
+           Padding="80"> <!--this is where you adjust the 'Log in to Mentoree'-->
+            </Label>
+        </Grid>
+
+        <StackLayout Grid.Row="6" VerticalOptions="StartAndExpand">
+            <!-- Adjusted VerticalOptions to "StartAndExpand" -->
+            <!-- username -->
+
+            <Label FontFamily="CandalRegular" TextColor="White" Text="     Username" HorizontalOptions="Start" Padding="8" />
+            <!-- how 2 add space here in username?  -->
+            <Frame BackgroundColor="White" BorderColor="White" CornerRadius="5" Padding="5" HeightRequest="45" WidthRequest="300">
+                <Entry TextColor="Grey" Placeholder="Enter Username" PlaceholderColor="Gray" />
+            </Frame>
+
+            <!-- password and forgot labels -->
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="20">
+                    <Label FontFamily="CandalRegular" TextColor="White" Text="     Password" HorizontalOptions="Start" Padding="8" />
+                    <Label FontFamily="CandalRegular" TextColor="White" Text="                                                     Forgot?" HorizontalOptions="End" Padding="8" />
+                </StackLayout>
+
+                <Frame BackgroundColor="White" BorderColor="White" CornerRadius="5" Padding="5" HeightRequest="45" WidthRequest="300">
+                    <Entry TextColor="Grey" Placeholder="Enter Password" PlaceholderColor="Gray" IsPassword="True" />
+                </Frame>
+            </StackLayout>
+            <!-- sign-in button -->
+            <Button Margin="0,15" BackgroundColor="Blue" Text="Log in" TextColor="White" HorizontalOptions="Center" HeightRequest="45" WidthRequest="150" Clicked="BTNLogin"/>
+            <BoxView HeightRequest="1" Color="White" HorizontalOptions="Center" WidthRequest="300" />
+            <Label FontFamily="CandalRegular" TextColor="White" HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Don't have an account?"/>
+                            <Span Text="  Sign up" TextColor="Blue" /> <!--itong line para pagsamahin ung text sa iisang line -->
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout> 
+
+    </Grid>
+</ContentPage>  
